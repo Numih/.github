@@ -1,7 +1,7 @@
 {
-    "name": "Análise Sonar para Maven",
-    "description": "Workflow de execução de análise com sonar para projetos Maven",
-    "iconName": "example-icon",
+    "name": "Sonar Cloud Analysis for Maven",
+    "description": "Workflow that runs an analysis synced with sonar cloud using the sonar maven plugin",
+    "iconName": "sonarcloud",
     "categories": [
         "Kotlin",
         "Java"
