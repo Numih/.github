@@ -1,4 +1,4 @@
-name: Análise Sonar
+name: Sonar Analysis
 on:
   push:
     branches:
@@ -7,7 +7,7 @@ on:
     types: [opened, synchronize, reopened]
 jobs:
   build:
-    name: Análise Sonar
+    name: Sonar Analysis
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -35,5 +35,5 @@ jobs:
           GITHUB_USER: ${{ secrets.MAVEN_GITHUB_USER }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: | # Criando settings.xml para permitir a utilização de pacotes da organização
-          echo '<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd"> <activeProfiles> <activeProfile>numih</activeProfile> </activeProfiles> <profiles> <profile> <id>numih</id> <repositories> <repository> <id>central</id> <url>https://repo1.maven.org/maven2</url> <releases><enabled>true</enabled></releases> <snapshots><enabled>true</enabled></snapshots> </repository> <repository> <id>github</id> <name>GitHub Numih Apache Maven Packages</name> <url>https://maven.pkg.github.com/numih/*</url> <releases><enabled>true</enabled></releases> <snapshots><enabled>true</enabled></snapshots> </repository> </repositories> </profile> </profiles> <servers> <server> <id>github</id> <username>${GITHUB_USER}</username> <password>${GITHUB_TOKEN}</password> </server> </servers></settings>' > ~/.m2/settings.xml
+          echo '<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd"> <activeProfiles> <activeProfile>$ORGANIZATION</activeProfile> </activeProfiles> <profiles> <profile> <id>$ORGANIZATION</id> <repositories> <repository> <id>central</id> <url>https://repo1.maven.org/maven2</url> <releases><enabled>true</enabled></releases> <snapshots><enabled>true</enabled></snapshots> </repository> <repository> <id>github</id> <name>GitHub $ORGANIZATION Apache Maven Packages</name> <url>https://maven.pkg.github.com/$ORGANIZATION/*</url> <releases><enabled>true</enabled></releases> <snapshots><enabled>true</enabled></snapshots> </repository> </repositories> </profile> </profiles> <servers> <server> <id>github</id> <username>${GITHUB_USER}</username> <password>${GITHUB_TOKEN}</password> </server> </servers></settings>' > ~/.m2/settings.xml
           mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
