@@ -1,0 +1,12 @@
+{
+    "name": "Análise Sonar para Maven",
+    "description": "Workflow de execução de análise com sonar para projetos Maven",
+    "iconName": "example-icon",
+    "categories": [
+        "Kotlin",
+        "Java"
+    ],
+    "filePatterns": [
+        "pom.xml"
+    ]
+}
