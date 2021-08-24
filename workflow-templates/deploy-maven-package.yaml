@@ -5,15 +5,20 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-    name: Build
+    name: Deploy maven package
     steps:
-      - uses: actions/checkout@v2
-      - id: build
+      - id: checkout
+        name: Checkout
+        uses: actions/checkout@v2
+      - id: setup
+        name: Create settings.xml
         uses: Numih/act-maven-settings-setup@v1
         with:
           url: ${{ secrets.MAVEN_REPOSITORY_URL }}
           user: ${{ secrets.MAVEN_REPOSITORY_USER  }}
           password: ${{ secrets.MAVEN_REPOSITORY_PASSWORD  }}
-      - run: mvn clean deploy
+      - id: deploy
+        name: Deploy package
+        run: mvn clean deploy
