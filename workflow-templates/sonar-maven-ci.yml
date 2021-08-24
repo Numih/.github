@@ -19,21 +19,27 @@ jobs:
         uses: Numih/act-maven-settings-setup@v1
         with:
           url: ${{ secrets.MAVEN_REPOSITORY_URL }}
-          user: ${{ secrets.MAVEN_REPOSITORY_USER  }}
-          password: ${{ secrets.MAVEN_REPOSITORY_PASSWORD  }}
+          user: ${{ secrets.MAVEN_REPOSITORY_USER }}
+          password: ${{ secrets.MAVEN_REPOSITORY_PASSWORD }}
       - name: Cache SonarCloud packages
         uses: actions/cache@v1
         with:
           path: ~/.sonar/cache
-          key: ${{ runner.os }}-sonar
-          restore-keys: ${{ runner.os }}-sonar
+          key: ${{ github.repository }}-sonar
+          restore-keys: ${{ github.repository }}-sonar
       - name: Cache Maven packages
         uses: actions/cache@v1
         with:
           path: ~/.m2
-          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-m2
+          key: ${{ github.repository }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ github.repository }}-m2
+      - name: Setup sonar variables
+        run: |
+          reponame=${{ github.repository }}
+          sonarproject=${reponame/\//_}
+          echo sonarproject=$sonarproject >> $GITHUB_ENV
       - name: Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+          GITHUB_TOKEN: ${{ secrets.MAVEN_REPOSITORY_PASSWORD }}
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.host.url=${{ secrets.SONAR_HOST }} -Dsonar.organization=${{ secrets.ORGANIZATION }} -Dsonar.projectKey=${{ env.sonarproject }}
