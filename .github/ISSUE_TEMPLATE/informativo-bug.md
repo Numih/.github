@@ -1,9 +1,9 @@
 ---
 name: Informativo de bug
 about: Crie um relatório que nos ajude a melhorar!
-title: "[BUG]"
+title: "[Bug] - Breve descrição do problema"
 labels: bug
-assignees: numih-g, numih-r
+assignees: numih-mb, numih-g, numih-r
 
 ---
 
