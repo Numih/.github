@@ -1,11 +1,8 @@
 name: Deploy maven package
 
 on:
-  push:
-    branches: [ main ]
-    paths:
-      - 'pom.xml'
-    
+  release:
+    types: [released]
 
 jobs:
   deploy:
