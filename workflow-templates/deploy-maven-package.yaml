@@ -1,0 +1,19 @@
+name: Deploy maven package
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build
+    steps:
+      - uses: actions/checkout@v2
+      - id: build
+        uses: Numih/act-maven-settings-setup@v1
+        with:
+          url: ${{ secrets.MAVEN_REPOSITORY_URL }}
+          user: ${{ secrets.MAVEN_REPOSITORY_USER  }}
+          password: ${{ secrets.MAVEN_REPOSITORY_PASSWORD  }}
+      - run: mvn clean deploy
