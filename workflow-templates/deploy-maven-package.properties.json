@@ -1,0 +1,13 @@
+{
+    "name": "Deploy maven package",
+    "description": "Workflow that deploys a maven artifact with the given repository url and authentication",
+    "iconName": "maven",
+    "categories": [
+        "Kotlin",
+        "Java",
+        "Maven"
+    ],
+    "filePatterns": [
+        "pom.xml"
+    ]
+}
