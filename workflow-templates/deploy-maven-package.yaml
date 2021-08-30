@@ -2,7 +2,7 @@ name: Deploy maven package
 
 on:
   release:
-    types: [ released, prereleased ]
+    types: [ published ]
 
 jobs:
   deploy:
