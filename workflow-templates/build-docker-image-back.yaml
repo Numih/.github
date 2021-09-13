@@ -1,0 +1,40 @@
+name: Create and publish a Docker image
+
+on:
+  release:
+    types: [ published ]
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  build-and-push-image:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - id: checkout
+        name: Checkout
+        uses: actions/checkout@v2
+        
+      - id: setup
+        name: Create settings.xml
+        uses: Numih/act-maven-settings-setup@v1
+        with:
+          url: ${{ secrets.MAVEN_REPOSITORY_URL }}
+          user: ${{ secrets.MAVEN_REPOSITORY_USER  }}
+          password: ${{ secrets.MAVEN_REPOSITORY_PASSWORD  }}
+          
+      - id: build
+        name: Build package
+        run: mvn clean package -DskipTests
+
+      - name: Docker build deploy
+        uses: Numih/act-docker-build-deploy-image@v1
+        with:
+          dockerfile: src/main/docker/Dockerfile.jvm
+          user: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
