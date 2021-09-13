@@ -1,0 +1,13 @@
+{
+    "name": "Build docker image for node projects",
+    "description": "",
+    "iconName": "node",
+    "categories": [
+        "Node",
+        "Javascript",
+        "React"
+    ],
+    "filePatterns": [
+        "package.json"
+    ]
+}
