@@ -13,43 +13,14 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: ["14.x"]
-
     steps:
     - uses: actions/checkout@v2
-    - name: Setup yarn with node ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm install --global yarn
-    
-    - name: Yarn install
-      run: yarn install
-      
     - name: Yarn build
-      run: yarn build
+      uses: Numih/act-yarn-build@v1
     
-    - name: Log in to the Container registry
-      uses: docker/login-action@v1
+    - name: Docker build deploy
+      uses: Numih/act-docker-build-deploy-image@v1
       with:
-        registry: ${{ env.REGISTRY }}
-        username: ${{ github.actor }}
+        dockerfile: docker/Dockerfile
+        user: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Extract metadata (tags, labels) for Docker
-      id: meta
-      uses: docker/metadata-action@v3
-      with:
-        images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-
-    - name: Build and push Docker image
-      uses: docker/build-push-action@v2
-      with:
-        file: docker/Dockerfile
-        context: .
-        push: true
-        tags: ${{ steps.meta.outputs.tags }}
-        labels: ${{ steps.meta.outputs.labels }}
