@@ -1,0 +1,13 @@
+{
+    "name": "Build docker image for maven projects",
+    "description": "",
+    "iconName": "node",
+    "categories": [
+        "Java",
+        "Kotlin",
+        "Maven"
+    ],
+    "filePatterns": [
+        "pom.xml"
+    ]
+}
