@@ -1,0 +1,10 @@
+{
+    "name": "Build app and push to Amazon s3",
+    "description": "",
+    "iconName": "node",
+    "categories": [
+        "React",
+        "Single-spa",
+        "yarn"
+    ]
+}
