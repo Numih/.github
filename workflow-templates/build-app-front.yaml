@@ -1,0 +1,25 @@
+name: Build apps front 
+
+on:
+  release:
+    types: [ published ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Yarn build
+      uses: Numih/act-yarn-build@v1
+      with: 
+        npm-secret: ${{ secrets.NPM_REGISTRY_SECRET }}
+    
+    - uses: aws-actions/setup-sam@v1
+    - uses: aws-actions/configure-aws-credentials@v1
+      with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-2
+    - run: aws s3 cp ./dist/ s3://numih-apps-front-prod/beta/#Nome do repositorio# --acl public-read --recursive
