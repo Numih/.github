@@ -15,6 +15,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - run: |
+        rm .env
+        echo IMPORT_MAP_URL=${{ secrets.AWS_BUCKET_URL }}${{ github.event.repository.name }}/${{ github.event.release.tag_name }}/importmap.json >> .env
     - name: Yarn build
       uses: Numih/act-yarn-build@v1
     
