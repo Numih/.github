@@ -1,6 +1,7 @@
 ---
 name: "Especificação de Requisitos [ERS]"
-description: documentação das orientações para o time de desenvolvedores
+description: "documentação das orientações para o time de desenvolvedores"
+about: "Funcionalidade é o recurso indivisível do sistema, ou seja, são ações que podem ser iniciadas e finalizadas em sequência sem novos dados. Um fluxo é um conjunto de funcionalidades."
 title: "[ERS]: " 
 labels: ["documentaion"]
 ---
