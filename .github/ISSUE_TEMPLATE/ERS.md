@@ -19,4 +19,4 @@ R:
 R: 
 
 **- Figma**
-```[![image](url da imagem)](link)```
+```[<img src="url da imagem" width="400">](link)```
