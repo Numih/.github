@@ -6,17 +6,18 @@ title: "[CRUD]: "
 labels: ["feature"]
 ---
 
+**- Conceito:**
+
+
 **- Campos Obrigatórios:**
 1. 
 2. 
 3. 
 
 
-
 **- Campos com validação:**
 Nome do Campo | Regra de validação
 --- | ---
-
 
 
 **- Figma**
