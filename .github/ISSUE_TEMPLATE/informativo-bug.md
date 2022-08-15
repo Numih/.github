@@ -1,9 +1,10 @@
 ---
-name: Informativo de bug
-about: Crie um relatório que nos ajude a melhorar!
-title: "[Bug] - Breve descrição do problema"
-labels: bug
-assignees: numih-mb, numih-g, numih-r
+name: "BUG [BUG]"
+description: "Create, Read, Update and Delete"
+about: "Informativo de bug"
+title: "[BUG]:  "
+labels: ["bug"]
+assignees: numih-g, numih-r
 
 ---
 
@@ -21,18 +22,7 @@ Passos para reproduzir o comportamento:
 Uma clara explicação do que deveria acontecer.
 
 **Capturas de tela**
-Se possível, incluir imagens que ajudam a descrever o problema.
-
-**Sistem (favor preencher, se aplicável):**
- - OS: [ex: Windows 10]
- - Navegador: [ex: chrome, safari]
- - Versão: [ex: 22]
-
-**Celular (favor preencher, se aplicável):**
- - Dispositivo: [ex: iPhone6]
- - Sistema: [ex: iOS8.1]
- - Nageador: [ex: stock browser, safari]
- - Versão: [ex: 22]
+```[<img src="url da imagem" width="400">](link)```
 
 **Informações adicionais**
 Qualquer outra informação que ajude a descrever o problema.
