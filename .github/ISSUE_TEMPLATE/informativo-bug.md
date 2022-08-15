@@ -1,6 +1,6 @@
 ---
 name: "BUG [BUG]"
-description: "Create, Read, Update and Delete"
+description: "Algo no sistema não funcionou como esperado"
 about: "Informativo de bug"
 title: "[BUG]:  "
 labels: ["bug"]
