@@ -22,7 +22,7 @@ Passos para reproduzir o comportamento:
 Uma clara explicação do que deveria acontecer.
 
 **Capturas de tela**
-```[<img src="url da imagem" width="400">](link)```
+```<img src="url da imagem" width="400">```
 
 **Informações adicionais**
 Qualquer outra informação que ajude a descrever o problema.
