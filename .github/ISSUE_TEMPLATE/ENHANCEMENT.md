@@ -20,7 +20,7 @@ R:
 R: 
 
 **Capturas de tela**
-```[<img src="url da imagem" width="400">](link)```
+```<img src="url da imagem" width="400">```
 
 **Informações adicionais**
 Qualquer outra informação que ajude a descrever o problema.
