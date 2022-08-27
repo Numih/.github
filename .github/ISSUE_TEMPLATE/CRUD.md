@@ -20,5 +20,8 @@ Nome do Campo | Regra de validação
 --- | ---
 
 
+**- Acesso e Alçadas:**
+
+
 **- Figma**
 ```[<img src="url da imagem" width="400">](link)```
