@@ -1,28 +1,25 @@
 ---
-name: "BUG [BUG]"
-description: "Algo no sistema não funcionou como esperado"
-about: "Informativo de bug"
-title: "[BUG]:  "
-labels: ["bug"]
+name: "COMPONENT [COMPONENT]"
+description: "Especificações de componentes"
+about: "Especificações de componentes"
+title: "[COMPONENT]:  "
+labels: ["feature"]
 assignees: numih-g, numih-r
 
 ---
 
-**Descrição do bug**
-Uma clara descrição do bug.
+**Descrição do componente**
 
-**Como reproduzir**
-Passos para reproduzir o comportamento:
-1. Vá em '...'
-2. Clique no '....'
-3. Navegue até '....'
-4. Veja o erro
+**Objetivo do componente**
 
-**Comportamento esperado**
-Uma clara explicação do que deveria acontecer.
+**Principais locais de uso**
+Liste os principais locais de uso no sistema
 
-**Capturas de tela**
-```<img src="url da imagem" width="400">```
+**Referências**
+Forneça links de referência para esse componente.
+
+**Figma**
+```<img src="url da imagem" width="400">(link)```
 
 **Informações adicionais**
-Qualquer outra informação que ajude a descrever o problema.
+Qualquer outra informação.
