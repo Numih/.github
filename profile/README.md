@@ -1,12 +1,24 @@
-## Hi there 👋
+# 🏢 Numih
 
-<!--
+**"Seu tempo no que importa. A Numih no que repete."**
 
-**Here are some ideas to get you started:**
+Na Numih, desenvolvemos um **ERP moderno e escalável** para automatizar rotinas administrativas.  
+Nosso objetivo é simples: liberar o tempo dos empreendedores para que possam focar no crescimento dos seus negócios.
 
-🙋‍♀️ A short introduction - what is your organization all about?
-🌈 Contribution guidelines - how can the community get involved?
-👩‍💻 Useful resources - where can the community find your docs? Is there anything else the community should know?
-🍿 Fun facts - what does your team eat for breakfast?
-🧙 Remember, you can do mighty things with the power of [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
--->
+---
+
+## 🌍 Missão
+Oferecer soluções intuitivas e transparentes que simplificam a gestão e aumentam a eficiência.
+
+---
+
+## 🔭 Visão
+Fazer da gestão uma força silenciosa que conecta equipes, simplifica rotinas e impulsiona o crescimento com inovação.
+
+---
+
+## 💡 Valores
+- Execução acima de ideias  
+- Atitude de dono acima de metas cumpridas  
+- Experiências acima de currículo  
+- Colaboração acima de conhecimento
